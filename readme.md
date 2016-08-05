@@ -4,6 +4,7 @@ It's a social networking app where you can post and share your thought. You can 
 
 ---
 ##Features
+- Material Design
 - JSON Parsing with Alamofire
 - Firebase storage and database
 - Facebook and email auth (Firebase)
