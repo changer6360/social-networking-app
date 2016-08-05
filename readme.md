@@ -1,6 +1,6 @@
 Social networking app written in Swift
 ============
-It's a social networking app where you can post and share your thought. You can like posts and in the future I will add comments to each post. It uses Firebase for authentication and to store all of the data (text + images)
+It's a social networking app where you can post and share your apps like in Product Hunt. You can like posts and in the future I will add comments to each post. It uses Firebase for authentication and to store all of the data (text + images)
 
 ---
 ##Features
