@@ -7,6 +7,9 @@ It's a social networking app where you can post and share your thought. You can 
 - JSON Parsing with Alamofire
 - Firebase storage and database
 - Facebook and email auth (Firebase)
+- Add a post with picture
 - Like a post
+- Delete post (to be added soon)
+- Comments (to be added soon)
 
-![Screen Varian1](https://github.com/changer6360/weather-app-swift/blob/master/images/cold.png)![Screen Variant 2](https://github.com/changer6360/weather-app-swift/blob/master/images/normal.png)![Screen Variant 3](https://github.com/changer6360/weather-app-swift/blob/master/images/warm.png)
+![Screen Varian1](https://github.com/changer6360/social-networking-app/blob/master/screens/login.png)![Screen Variant 2](https://github.com/changer6360/social-networking-app/blob/master/screens/timeline.png)![Screen Variant 3](https://github.com/changer6360/social-networking-app/blob/master/screens/post.png)
