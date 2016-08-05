@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "74885A6F1127727CA936B1A04BF0AD41B73A5762",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "74885A6F1127727CA936B1A04BF0AD41B73A5762" : 0,
+    "68A0524818699C650A3E0847BBE33E5695966A27" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "94DE35D6-7CDE-4F3D-9C57-AF98CEA5AADC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "74885A6F1127727CA936B1A04BF0AD41B73A5762" : "showcase-app\/",
+    "68A0524818699C650A3E0847BBE33E5695966A27" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "showcase-app",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "showcase-app.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:changer6360\/weather-app-swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "68A0524818699C650A3E0847BBE33E5695966A27"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:changer6360\/social-networking-app.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "74885A6F1127727CA936B1A04BF0AD41B73A5762"
+    }
+  ]
+}
