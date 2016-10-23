@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 let URL_BASE = FIRDatabase.database().reference()
-let URL_STORAGE = FIRStorage.storage().referenceForURL("gs://showcase-app-28897.appspot.com")
+let URL_STORAGE = FIRStorage.storage().reference()
 
 class DataService {
     
@@ -40,12 +40,12 @@ class DataService {
     }
     
     var REF_USER_CURRENT: FIRDatabaseReference {
-        let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as! String
+        let uid = UserDefaults.standard.value(forKey: KEY_UID) as! String
         let user = URL_BASE.child("users").child(uid)
         return user
     }
     
-    func createFirebaseUser(uid: String,user: Dictionary<String,String>) {
+    func createFirebaseUser(_ uid: String,user: Dictionary<String,String>) {
         REF_USERS.child(uid).updateChildValues(user)
     }
 

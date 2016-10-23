@@ -17,9 +17,9 @@ class feedViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var selectedImageView: UIImageView!
     
     
-    var imageSelected = true
+    var imageSelected = false
     var posts = [Post]()
-    static var imageCache = NSCache()
+    static var imageCache = NSCache<NSString, AnyObject>()
     
     var imagePicker: UIImagePickerController!
 
@@ -35,7 +35,7 @@ class feedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         
-        DataService.ds.REF_POSTS.observeEventType(.Value, withBlock: { snapshot in
+        DataService.ds.REF_POSTS.observe(.value, with: { snapshot in
             self.tableView.reloadData()
             
             self.posts = []
@@ -55,39 +55,39 @@ class feedViewController: UIViewController, UITableViewDelegate, UITableViewData
         })
     }
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
         let post = posts[indexPath.row]
         
-        if let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as? PostCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
             
             cell.request?.cancel()
             
             var img: UIImage?
             
             if let url = post.imageUrl {
-                img = feedViewController.imageCache.objectForKey(url) as? UIImage
+                img = feedViewController.imageCache.object(forKey: url as NSString) as? UIImage
             }
             
-            cell.configureCell(post, img: img)
+            cell.configureCell(post: post, img: img)
             return cell
             } else {
             return PostCell()
             }
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        let post = posts[indexPath.row]
+        let post = posts[(indexPath as NSIndexPath).row]
         
         if post.imageUrl == nil {
             return 200
@@ -96,30 +96,30 @@ class feedViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         
-        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        imagePicker.dismiss(animated: true, completion: nil)
         selectedImageView.image = image
         imageSelected = true
     }
     
-    @IBAction func selectImage(sender: UITapGestureRecognizer) {
-        presentViewController(imagePicker, animated: true, completion: nil)
+    @IBAction func selectImage(_ sender: UITapGestureRecognizer) {
+        present(imagePicker, animated: true, completion: nil)
     }
-    @IBAction func makePost(sender: AnyObject) {
-        if let txt = postField.text where txt != "" {
+    @IBAction func makePost(_ sender: AnyObject) {
+        if let txt = postField.text , txt != "" {
             
             let cameraImage = UIImage(named: "camera")
             
-            if let img = selectedImageView.image where img != cameraImage && imageSelected == true {
+            if let img = selectedImageView.image , img != cameraImage && imageSelected == true {
                 let imgData = UIImageJPEGRepresentation(img, 0.2)!
                 
-                let imgPath = "\(NSDate.timeIntervalSinceReferenceDate())"
+                let imgPath = "\(Date.timeIntervalSinceReferenceDate)"
                 
                 let metadata = FIRStorageMetadata()
                 metadata.contentType = "image/jpeg"
                 
-                DataService.ds.REF_IMAGES.child(imgPath).putData(imgData, metadata: metadata, completion: { metadata, error in
+                DataService.ds.REF_IMAGES.child(imgPath).put(imgData, metadata: metadata, completion: { metadata, error in
                     
                     if error != nil {
                         print("Error uploading the image. Exact error \(error.debugDescription)")
@@ -127,26 +127,26 @@ class feedViewController: UIViewController, UITableViewDelegate, UITableViewData
                         if let meta = metadata {
                             if let imgLink = meta.downloadURL()?.absoluteString {
                                 print("Image uploaded successfully. \(imgLink)")
-                                self.postToFirebase(imgLink)
+                                self.postToFirebase(imgUrl: imgLink)
                         
                             }
                         }
                     }
                 })
             } else {
-                self.postToFirebase(nil)
+                self.postToFirebase(imgUrl: nil)
             }
         }
     }
     
     func postToFirebase(imgUrl: String?) {
         var post: Dictionary<String, AnyObject> = [
-            "description" : postField.text!,
-            "likes": 0
+            "description" : postField.text! as AnyObject,
+            "likes": 0 as AnyObject
         ]
         
         if imgUrl != nil {
-             post["imageURL"] = imgUrl!
+             post["imageURL"] = imgUrl! as AnyObject?
         }
             let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
             firebasePost.setValue(post)

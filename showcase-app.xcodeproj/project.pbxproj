@@ -13,9 +13,6 @@
 		014449C01D3240C10071237E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014449BF1D3240C10071237E /* Constants.swift */; };
 		014449C21D329C3D0071237E /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014449C11D329C3D0071237E /* MaterialButton.swift */; };
 		014449C41D32A0E40071237E /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014449C31D32A0E40071237E /* MaterialTextField.swift */; };
-		014449C91D32B87A0071237E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 014449C61D32B87A0071237E /* Bolts.framework */; };
-		014449CA1D32B87A0071237E /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 014449C71D32B87A0071237E /* FBSDKCoreKit.framework */; };
-		014449CB1D32B87A0071237E /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 014449C81D32B87A0071237E /* FBSDKLoginKit.framework */; };
 		014D5F5F1D312ECE00B14D74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014D5F5E1D312ECE00B14D74 /* AppDelegate.swift */; };
 		014D5F611D312ECE00B14D74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014D5F601D312ECE00B14D74 /* ViewController.swift */; };
 		014D5F641D312ECE00B14D74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 014D5F621D312ECE00B14D74 /* Main.storyboard */; };
@@ -40,9 +37,6 @@
 		014449BF1D3240C10071237E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		014449C11D329C3D0071237E /* MaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
 		014449C31D32A0E40071237E /* MaterialTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
-		014449C61D32B87A0071237E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		014449C71D32B87A0071237E /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		014449C81D32B87A0071237E /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		014D5F5B1D312ECE00B14D74 /* showcase-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "showcase-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		014D5F5E1D312ECE00B14D74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		014D5F601D312ECE00B14D74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,9 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				014449C91D32B87A0071237E /* Bolts.framework in Frameworks */,
-				014449CA1D32B87A0071237E /* FBSDKCoreKit.framework in Frameworks */,
-				014449CB1D32B87A0071237E /* FBSDKLoginKit.framework in Frameworks */,
 				491F63F4E31168A2ECBF23A5 /* Pods_showcase_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,16 +84,6 @@
 				014449BF1D3240C10071237E /* Constants.swift */,
 			);
 			name = Util;
-			sourceTree = "<group>";
-		};
-		014449C51D32B84A0071237E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				014449C61D32B87A0071237E /* Bolts.framework */,
-				014449C71D32B87A0071237E /* FBSDKCoreKit.framework */,
-				014449C81D32B87A0071237E /* FBSDKLoginKit.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		014D5F521D312ECE00B14D74 = {
@@ -127,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				013933631D340F4200132847 /* Services */,
-				014449C51D32B84A0071237E /* Frameworks */,
 				014449BE1D3240AF0071237E /* Util */,
 				014D5F731D31370600B14D74 /* Resources */,
 				014D5F721D31370100B14D74 /* Model */,
@@ -208,12 +188,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 014D5F6D1D312ECE00B14D74 /* Build configuration list for PBXNativeTarget "showcase-app" */;
 			buildPhases = (
-				44872420546A02EF57E6FF23 /* 📦 Check Pods Manifest.lock */,
+				44872420546A02EF57E6FF23 /* [CP] Check Pods Manifest.lock */,
 				014D5F571D312ECE00B14D74 /* Sources */,
 				014D5F581D312ECE00B14D74 /* Frameworks */,
 				014D5F591D312ECE00B14D74 /* Resources */,
-				8764EC3C413B12CF7E7772CD /* 📦 Embed Pods Frameworks */,
-				CEA9AA88DF92946CC79BBABB /* 📦 Copy Pods Resources */,
+				8764EC3C413B12CF7E7772CD /* [CP] Embed Pods Frameworks */,
+				CEA9AA88DF92946CC79BBABB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -237,6 +217,7 @@
 					014D5F5A1D312ECE00B14D74 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 9Q6VR23WUE;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -277,29 +258,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		44872420546A02EF57E6FF23 /* 📦 Check Pods Manifest.lock */ = {
+		44872420546A02EF57E6FF23 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		8764EC3C413B12CF7E7772CD /* 📦 Embed Pods Frameworks */ = {
+		8764EC3C413B12CF7E7772CD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,14 +288,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-showcase-app/Pods-showcase-app-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CEA9AA88DF92946CC79BBABB /* 📦 Copy Pods Resources */ = {
+		CEA9AA88DF92946CC79BBABB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +445,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tihomirvidenov.showcase-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -480,6 +462,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tihomirvidenov.showcase-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

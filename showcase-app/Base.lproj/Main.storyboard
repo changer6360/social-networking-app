@@ -1,32 +1,24 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11535.1" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11523"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="NotoSans-Bold.ttf">
+        <array key="NotoSans-Bold.ttf">
             <string>NotoSans-Bold</string>
-            <string>NotoSans-Bold</string>
-            <string>NotoSans-Bold</string>
-            <string>NotoSans-Bold</string>
-            <string>NotoSans-Bold</string>
-            <string>NotoSans-Bold</string>
-            <string>NotoSans-Bold</string>
-        </mutableArray>
-        <mutableArray key="NotoSans-BoldItalic.ttf">
+        </array>
+        <array key="NotoSans-BoldItalic.ttf">
             <string>NotoSans-BoldItalic</string>
-        </mutableArray>
-        <mutableArray key="NotoSans-Regular.ttf">
+        </array>
+        <array key="NotoSans-Regular.ttf">
             <string>NotoSans</string>
-            <string>NotoSans</string>
-            <string>NotoSans</string>
-            <string>NotoSans</string>
-            <string>NotoSans</string>
-            <string>NotoSans</string>
-            <string>NotoSans</string>
-        </mutableArray>
+        </array>
     </customFonts>
     <scenes>
         <!--View Controller-->
@@ -38,11 +30,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lcn-uJ-8GU">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="128"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In / Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHm-xG-oXC">
                                         <rect key="frame" x="20" y="49" width="170" height="21"/>
@@ -51,11 +43,11 @@
                                             <constraint firstAttribute="height" constant="21" id="kPE-EK-Hqz"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.50980392156862742" green="0.68627450980392157" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.50980392156862742" green="0.68627450980392157" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="zHm-xG-oXC" firstAttribute="top" secondItem="lcn-uJ-8GU" secondAttribute="top" constant="49" id="BMw-Pr-UBo"/>
                                     <constraint firstItem="zHm-xG-oXC" firstAttribute="leading" secondItem="lcn-uJ-8GU" secondAttribute="leading" constant="20" id="DSY-4H-Zhq"/>
@@ -63,20 +55,20 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KDK-Tv-eu4" customClass="MaterialView" customModule="showcase_app" customModuleProvider="target">
-                                <rect key="frame" x="20" y="79" width="560" height="128"/>
+                                <rect key="frame" x="16" y="79" width="343" height="128"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="1ad-2y-sqe">
-                                        <rect key="frame" x="20" y="12" width="520" height="108"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="1ad-2y-sqe">
+                                        <rect key="frame" x="20" y="10" width="303" height="108"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb-icon" translatesAutoresizingMaskIntoConstraints="NO" id="X3f-Bs-tva">
-                                                <rect key="frame" x="0.0" y="22" width="65" height="65"/>
+                                                <rect key="frame" x="0.0" y="21.5" width="65" height="65"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vgq-kW-A1V" customClass="MaterialButton" customModule="showcase_app" customModuleProvider="target">
-                                                <rect key="frame" x="105" y="38" width="415" height="33"/>
-                                                <color key="backgroundColor" red="0.11764705882352941" green="0.53333333333333333" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vgq-kW-A1V" customClass="MaterialButton" customModule="showcase_app" customModuleProvider="target">
+                                                <rect key="frame" x="105" y="37.5" width="198" height="33"/>
+                                                <color key="backgroundColor" red="0.11764705882352941" green="0.53333333333333333" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
                                                 <state key="normal" title="FACEBOOK LOGIN">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="fbBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ud9-h0-Mzp"/>
@@ -85,7 +77,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="1ad-2y-sqe" secondAttribute="trailing" constant="20" id="Pep-FS-mYi"/>
                                     <constraint firstAttribute="height" constant="128" id="Q7y-mH-53w"/>
@@ -95,7 +87,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDQ-i7-3Lq" customClass="MaterialView" customModule="showcase_app" customModuleProvider="target">
-                                <rect key="frame" x="20" y="227" width="560" height="353"/>
+                                <rect key="frame" x="16" y="227" width="343" height="420"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Login / Sign up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0X0-3D-o3v">
                                         <rect key="frame" x="20" y="20" width="178" height="24"/>
@@ -106,7 +98,7 @@
                                             <constraint firstAttribute="height" constant="21" id="dCZ-dD-Hw3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -116,42 +108,42 @@
                                         </variation>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Z5-Vd-byW" customClass="MaterialTextField" customModule="showcase_app" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="64" width="520" height="35"/>
-                                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="20" y="64" width="303" height="35"/>
+                                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="iXi-GJ-c1k"/>
                                         </constraints>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aFn-TT-J5J" customClass="MaterialTextField" customModule="showcase_app" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="119" width="520" height="35"/>
-                                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="20" y="119" width="303" height="35"/>
+                                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="MdC-xh-cdJ"/>
                                         </constraints>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHa-8i-Vtj" customClass="MaterialButton" customModule="showcase_app" customModuleProvider="target">
-                                        <rect key="frame" x="167" y="204" width="227" height="33"/>
-                                        <color key="backgroundColor" red="0.50980392159999999" green="0.68627450980000004" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="58.5" y="204" width="227" height="33"/>
+                                        <color key="backgroundColor" red="0.50980392159999999" green="0.68627450980000004" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="227" id="Daw-Mc-0T8"/>
                                             <constraint firstAttribute="height" constant="33" id="wAS-Tf-ccN"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
                                         <state key="normal" title="Login / Signup">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="attemptLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pPS-GF-2jW"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="aFn-TT-J5J" firstAttribute="leading" secondItem="4Z5-Vd-byW" secondAttribute="leading" id="1DV-KJ-vXy"/>
                                     <constraint firstItem="4Z5-Vd-byW" firstAttribute="top" secondItem="0X0-3D-o3v" secondAttribute="bottom" constant="20" id="6Xk-cw-0wd"/>
@@ -172,7 +164,7 @@
                                 </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zDQ-i7-3Lq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Fgg-Um-1sD"/>
                             <constraint firstItem="zDQ-i7-3Lq" firstAttribute="top" secondItem="KDK-Tv-eu4" secondAttribute="bottom" constant="20" id="I8q-XV-Zma"/>
@@ -206,23 +198,23 @@
                         <viewControllerLayoutGuide type="bottom" id="Ehi-cT-Rbq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hXR-zQ-g3H" customClass="Username">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jo7-nC-NSR">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jo7-nC-NSR">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="128"/>
-                                <color key="backgroundColor" red="0.50980392159999999" green="0.68627450980000004" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.50980392159999999" green="0.68627450980000004" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="VTh-Ij-pTz"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="veK-HL-aKv" customClass="MaterialView" customModule="showcase_app" customModuleProvider="target">
-                                <rect key="frame" x="136" y="66" width="328" height="304"/>
+                                <rect key="frame" x="23.5" y="66" width="328" height="304"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="aGj-QF-zsv">
                                         <rect key="frame" x="37" y="8" width="254" height="263"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="SWo-mK-7Ca" customClass="ImageMaterial" customModule="showcase_app" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="752" image="profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="SWo-mK-7Ca" customClass="ImageMaterial" customModule="showcase_app" customModuleProvider="target">
                                                 <rect key="frame" x="52" y="0.0" width="150" height="150"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -238,18 +230,18 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CzU-07-V9s">
                                                         <rect key="frame" x="0.0" y="0.0" width="254" height="21"/>
-                                                        <color key="backgroundColor" red="0.50980392159999999" green="0.68627450980000004" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.50980392159999999" green="0.68627450980000004" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="254" id="Bqo-Ry-MA8"/>
                                                             <constraint firstAttribute="height" constant="21" id="dGz-ps-S2e"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="NotoSans-BoldItalic" family="Noto Sans" pointSize="17"/>
-                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="69O-Fs-6oN" customClass="MaterialTextField" customModule="showcase_app" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="26" width="254" height="30"/>
-                                                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="254" id="TfS-ZS-ZQL"/>
                                                             <constraint firstAttribute="height" constant="30" id="zSl-1i-CrW"/>
@@ -258,8 +250,8 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6w-XF-s59" customClass="MaterialButton" customModule="showcase_app" customModuleProvider="target">
-                                                        <rect key="frame" x="109" y="61" width="37" height="30"/>
-                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <rect key="frame" x="108.5" y="61" width="37" height="30"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="183" id="aV9-9r-KWt"/>
                                                             <constraint firstAttribute="height" constant="30" id="zcW-Fw-YYh"/>
@@ -286,7 +278,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="aGj-QF-zsv" firstAttribute="leading" secondItem="veK-HL-aKv" secondAttribute="leading" constant="37" id="5oK-rv-9Xm"/>
                                     <constraint firstAttribute="width" constant="328" id="Bdv-Y2-Wxu"/>
@@ -296,7 +288,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Jo7-nC-NSR" secondAttribute="trailing" id="Exy-o9-dSF"/>
                             <constraint firstItem="Jo7-nC-NSR" firstAttribute="top" secondItem="hXR-zQ-g3H" secondAttribute="top" id="Kpw-c7-EPz"/>
@@ -325,23 +317,23 @@
                         <viewControllerLayoutGuide type="bottom" id="UXQ-H4-qzE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6Xh-Uk-AfT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L0l-s2-16R" customClass="MaterialView" customModule="showcase_app" customModuleProvider="target">
                                 <rect key="frame" x="20" y="72" width="560" height="53"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="1Ek-QE-54T">
-                                        <rect key="frame" x="8" y="8" width="544" height="37"/>
+                                        <rect key="frame" x="8" y="8" width="327" height="37"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Talk about your app" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEv-Ly-zlK" customClass="MaterialTextField" customModule="showcase_app" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="453" height="37"/>
-                                                <color key="backgroundColor" red="0.87415865380000002" green="0.87415865380000002" blue="0.87415865380000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="236" height="37"/>
+                                                <color key="backgroundColor" red="0.87415865380000002" green="0.87415865380000002" blue="0.87415865380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="DOu-7H-BNq">
-                                                <rect key="frame" x="460" y="0.0" width="37" height="37"/>
+                                                <rect key="frame" x="243" y="0.0" width="37" height="37"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="37" id="8dt-7j-kdj"/>
@@ -352,14 +344,14 @@
                                                 </connections>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHC-bt-yxl" customClass="MaterialButton" customModule="showcase_app" customModuleProvider="target">
-                                                <rect key="frame" x="504" y="0.0" width="40" height="37"/>
-                                                <color key="backgroundColor" red="0.0" green="0.70588235294117641" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="287" y="0.0" width="40" height="37"/>
+                                                <color key="backgroundColor" red="0.0" green="0.70588235294117641" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="tLf-eQ-mgd"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
                                                 <state key="normal" title="POST">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="makePost:" destination="PME-Og-qHh" eventType="touchUpInside" id="w99-6U-vt3"/>
@@ -368,7 +360,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="NZv-3w-HWV"/>
                                     <constraint firstItem="1Ek-QE-54T" firstAttribute="leading" secondItem="L0l-s2-16R" secondAttribute="leadingMargin" id="cvF-Ro-MIM"/>
@@ -379,7 +371,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="400" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5wI-br-nIe">
                                 <rect key="frame" x="20" y="133" width="560" height="467"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostCell" id="78P-jZ-VCE" userLabel="TableViewPostCell" customClass="PostCell" customModule="showcase_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="560" height="400"/>
@@ -388,8 +380,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="400"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NS5-Cx-fM7" customClass="MaterialView" customModule="showcase_app" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="8" width="560" height="383"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NS5-Cx-fM7" customClass="MaterialView" customModule="showcase_app" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="8" width="560" height="384"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3ea-np-S35">
                                                             <rect key="frame" x="8" y="8" width="544" height="333"/>
@@ -407,7 +399,7 @@
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dragonSlayer32" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xB5-wY-Ip0">
                                                                             <rect key="frame" x="60" y="0.0" width="312" height="50"/>
                                                                             <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
-                                                                            <color key="textColor" red="0.50980392159999999" green="0.68627450980000004" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <color key="textColor" red="0.50980392159999999" green="0.68627450980000004" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="261" verticalHuggingPriority="251" image="heart-empty" translatesAutoresizingMaskIntoConstraints="NO" id="KFq-7I-2vD">
@@ -426,13 +418,13 @@
                                                                                         <constraint firstAttribute="height" constant="24" id="xUb-cG-d6I"/>
                                                                                     </constraints>
                                                                                     <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
-                                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                    <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ec2-7L-bjP">
                                                                                     <rect key="frame" x="0.0" y="24" width="102" height="26"/>
                                                                                     <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
-                                                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                             </subviews>
@@ -440,19 +432,19 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FMh-B3-1bW">
-                                                                    <rect key="frame" x="0.0" y="55" width="544" height="80"/>
-                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <rect key="frame" x="0.0" y="55" width="544" height="273"/>
+                                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="F7a-dL-acS"/>
                                                                     </constraints>
                                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                     <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                                                 </textView>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screen" translatesAutoresizingMaskIntoConstraints="NO" id="7uS-Ua-bPa">
-                                                                    <rect key="frame" x="0.0" y="140" width="544" height="193"/>
+                                                                    <rect key="frame" x="0.0" y="333" width="544" height="0.0"/>
                                                                 </imageView>
                                                             </subviews>
                                                             <constraints>
@@ -464,32 +456,32 @@
                                                                 </mask>
                                                             </variation>
                                                         </stackView>
-                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGr-u0-Qt3">
-                                                            <rect key="frame" x="8" y="349" width="79" height="26"/>
-                                                            <color key="backgroundColor" red="0.97647058819999999" green="0.25098039220000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGr-u0-Qt3">
+                                                            <rect key="frame" x="8" y="350" width="79" height="26"/>
+                                                            <color key="backgroundColor" red="0.97647058819999999" green="0.25098039220000001" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="26" id="Rae-00-wtX"/>
                                                                 <constraint firstAttribute="width" constant="79" id="ngc-Zv-44S"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
                                                             <state key="normal" title="DELETE">
-                                                                <color key="titleColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="titleColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2HA-jl-ojc">
-                                                            <rect key="frame" x="440" y="349" width="112" height="26"/>
-                                                            <color key="backgroundColor" red="0.59607843140000005" green="0.50588235290000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2HA-jl-ojc">
+                                                            <rect key="frame" x="440" y="350" width="112" height="26"/>
+                                                            <color key="backgroundColor" red="0.59607843140000005" green="0.50588235290000005" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="112" id="7uR-mA-oMu"/>
                                                                 <constraint firstAttribute="height" constant="26" id="tCa-EF-WFq"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
                                                             <state key="normal" title="Comments: 3">
-                                                                <color key="titleColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="titleColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottomMargin" secondItem="3ea-np-S35" secondAttribute="bottom" id="2Gc-pc-4jC"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="3ea-np-S35" secondAttribute="bottom" constant="35" id="9dh-HG-PHb"/>
@@ -514,7 +506,7 @@
                                                     </variation>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="NS5-Cx-fM7" firstAttribute="top" secondItem="qU0-Ot-sBr" secondAttribute="topMargin" constant="5" id="0hJ-kJ-7o1"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="NS5-Cx-fM7" secondAttribute="bottom" id="34E-0y-UfS"/>
@@ -534,7 +526,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="commentsButton" destination="2HA-jl-ojc" id="8mM-xg-G9H"/>
                                             <outlet property="deleteButton" destination="MGr-u0-Qt3" id="ynd-kb-mEl"/>
@@ -549,7 +541,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5wI-br-nIe" firstAttribute="top" secondItem="L0l-s2-16R" secondAttribute="bottom" constant="8" id="1ri-6j-fe1"/>
                             <constraint firstItem="5wI-br-nIe" firstAttribute="leading" secondItem="6Xh-Uk-AfT" secondAttribute="leadingMargin" id="2qn-LR-1Ar"/>
@@ -591,10 +583,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4bB-RH-7oV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rCw-y2-bZ4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rCw-y2-bZ4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.50980392159999999" green="0.68627450980000004" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.50980392159999999" green="0.68627450980000004" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

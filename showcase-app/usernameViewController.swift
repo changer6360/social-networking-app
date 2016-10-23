@@ -31,7 +31,7 @@ class usernameViewController: UIViewController, UIImagePickerControllerDelegate,
         let tap = UITapGestureRecognizer(target: self, action: #selector(usernameViewController.imageTapped(_:)))
         tap.numberOfTapsRequired = 1
         profileImg.addGestureRecognizer(tap)
-        profileImg.userInteractionEnabled = true
+        profileImg.isUserInteractionEnabled = true
         
         
         profileImg.layer.cornerRadius = profileImg.frame.size.width / 2
@@ -45,45 +45,46 @@ class usernameViewController: UIViewController, UIImagePickerControllerDelegate,
         imgRef = DataService.ds.REF_USER_CURRENT.child("profileImage")
         
         
-        imgRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+        imgRef.observeSingleEvent(of: .value, with: { snapshot in
             
             if snapshot.value is NSNull {
+                print("Snapshot value is nsnull: \(snapshot.value)")
                 self.profileImg.image = UIImage(named: "profileImage")
             } else {
                 
                 if let profImg = snapshot.value {
                     self.imageUrl = profImg as! String
-                    print(self.imageUrl)
+                    print("Test: \(self.imageUrl)")
                 }
                 
-                self.request = Alamofire.request(.GET, self.imageUrl).response(completionHandler: { request, response, data, err in
+                self.request = Alamofire.request(self.imageUrl).response { response in
                     
-                    if err == nil {
-                        let img = UIImage(data: data!)!
+                    if response.error == nil {
+                        let img = UIImage(data: response.data!)
                         self.profileImg.image = img
                     }
                 
-                })
+                }
             }
         })
             
         }
         
 
-    @IBAction func userNameSubmit(sender: AnyObject) {
+    @IBAction func userNameSubmit(_ sender: AnyObject) {
         
         //check if there is anything typed
         if userNameText.text != "" {
             userName = userNameText.text!
             
             //check if the choosen username is already taken
-             userRef.queryOrderedByChild("username").queryEqualToValue("\(userName)").observeSingleEventOfType(.Value, withBlock: { snapshot in
+            userRef.queryOrdered(byChild: "username").queryEqual(toValue: "\(userName)").observeSingleEvent(of: .value, with: { snapshot in
             
             if snapshot.value is NSNull {
                 //if not exist - save it for the user
                 
                 self.currentUser.setValue("\(self.userName)")
-                self.performSegueWithIdentifier(SEGUE_FEED, sender: nil)
+                self.performSegue(withIdentifier: SEGUE_FEED, sender: nil)
                 
             } else {
                 //if exist - show error message
@@ -102,25 +103,25 @@ class usernameViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     //custom alert controller
-    func showErrorAlert(title: String, msg: String){
-        let alert = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
-        let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+    func showErrorAlert(_ title: String, msg: String){
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
         alert.addAction(action)
-        presentViewController(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         
-        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        imagePicker.dismiss(animated: true, completion: nil)
         profileImg.image = image
         
         let imgData = UIImageJPEGRepresentation(image, 0.2)!
-        let imgPath = "\(NSDate.timeIntervalSinceReferenceDate())"
+        let imgPath = "\(Date.timeIntervalSinceReferenceDate)"
         
         let metadata = FIRStorageMetadata()
         metadata.contentType = "image/jpeg"
         
-        DataService.ds.REF_IMAGES.child(imgPath).putData(imgData, metadata: metadata, completion: { metadata, error in
+        DataService.ds.REF_IMAGES.child(imgPath).put(imgData, metadata: metadata, completion: { metadata, error in
             
             if error != nil {
                 self.showErrorAlert("Error", msg: "There was an error while uploading your image")
@@ -137,8 +138,8 @@ class usernameViewController: UIViewController, UIImagePickerControllerDelegate,
         
     }
     
-    func imageTapped(sender: UITapGestureRecognizer) {
-        presentViewController(imagePicker, animated: true, completion: nil)
+    func imageTapped(_ sender: UITapGestureRecognizer) {
+        present(imagePicker, animated: true, completion: nil)
     }
   
 }

@@ -29,10 +29,10 @@ class ViewController: UIViewController {
     }
 
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) != nil {
+        if UserDefaults.standard.value(forKey: KEY_UID) != nil {
             //self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
             
             checkForUserName()
@@ -40,24 +40,24 @@ class ViewController: UIViewController {
     }
 
     //Logging with FACEBOOK
-    @IBAction func fbBtnPressed(sender: UIButton!) {
+    @IBAction func fbBtnPressed(_ sender: UIButton!) {
         
         let facebookLogin = FBSDKLoginManager()
 
-        facebookLogin.logInWithReadPermissions(["email"], fromViewController: self, handler: { (facebookResult: FBSDKLoginManagerLoginResult!, facebookError:NSError!) in
+        facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
 
-            
-            if facebookError != nil {
+            if error != nil {
                 self.showErrorAlert("Opps", msg: "Something went wrong, please try again later.")
-                print("Facebook login failed. Error \(facebookError)")
+            } else if result?.isCancelled == true {
+                    self.showErrorAlert("Error", msg: "The user cancelled authentication with Facebook")
             } else {
-                let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
+                let accessToken = FBSDKAccessToken.current().tokenString
                 print("successfully logged in with Facebook. \(accessToken)")
                 
                 
-                let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString)
+                let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 
-                FIRAuth.auth()?.signInWithCredential(credential, completion: { (user, error) in
+                FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
                     
                     if error != nil {
                         print("Login failed. \(error)")
@@ -77,37 +77,38 @@ class ViewController: UIViewController {
                         DataService.ds.createFirebaseUser(user!.uid, user: userData)
                         
                         
-                        NSUserDefaults.standardUserDefaults().setValue(user!.uid, forKey: KEY_UID)
+                        UserDefaults.standard.setValue(user!.uid, forKey: KEY_UID)
                         
                         self.checkForUserName()
+                     
                         
                     }
                 })
             }
         }
-    )}
+    }
     
     //Logging with Email and Password
-    @IBAction func attemptLogin(sender: UIButton!) {
+    @IBAction func attemptLogin(_ sender: UIButton!) {
         
-        if let email = emailField.text where email != "", let pass = passwordField.text where pass != "" {
+        if let email = emailField.text , email != "", let pass = passwordField.text , pass != "" {
             
-            FIRAuth.auth()?.signInWithEmail(email, password: pass, completion: { (user, error) in
+            FIRAuth.auth()?.signIn(withEmail: email, password: pass, completion: { (user, error) in
                 
                 if error != nil {
-                    print(error)
+                    print(error!)
                     
                     //if the user account doesn't exist we will still create one
-                    if error!.code == STATUS_ACCOUNT_NONEXIST {
-                        FIRAuth.auth()?.createUserWithEmail(email, password: pass, completion: { user, error in
+                    if error?._code == STATUS_ACCOUNT_NONEXIST {
+                        FIRAuth.auth()?.createUser(withEmail: email, password: pass, completion: { user, error in
                             
                             //if there is some non specified yet error
                             if error != nil {
-                                print(error)
+                                print(error!)
                                 self.showErrorAlert("Could not create account", msg: "Problem creating the account. Try something else")
                             } else {
                                 //creating the account and logging in the user
-                                NSUserDefaults.standardUserDefaults().setValue(user!.uid, forKey: KEY_UID)
+                                UserDefaults.standard.setValue(user!.uid, forKey: KEY_UID)
                                 let userData = ["provider": "emailLogin", "email": email]
                                 DataService.ds.createFirebaseUser(user!.uid, user: userData)
                                 
@@ -134,22 +135,22 @@ class ViewController: UIViewController {
     }
     
     func checkForUserName() {
-        DataService.ds.REF_USER_CURRENT.child("username").observeSingleEventOfType(.Value, withBlock: { snapshot in
+        DataService.ds.REF_USER_CURRENT.child("username").observeSingleEvent(of: .value, with: { snapshot in
             
             if snapshot.value is NSNull {
-            self.performSegueWithIdentifier(SEGUE_USERNAME, sender: nil)
+            self.performSegue(withIdentifier: SEGUE_USERNAME, sender: nil)
             } else {
-            self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+            self.performSegue(withIdentifier: SEGUE_LOGGED_IN, sender: nil)
             }
         })
     }
     
     //custom alert controller
-    func showErrorAlert(title: String, msg: String){
-        let alert = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
-        let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+    func showErrorAlert(_ title: String, msg: String){
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
         alert.addAction(action)
-        presentViewController(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
 }

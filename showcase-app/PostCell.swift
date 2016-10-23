@@ -32,14 +32,14 @@ class PostCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(PostCell.likeTapped(_:)))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(likeTapped))
         tap.numberOfTapsRequired = 1
         likeImg.addGestureRecognizer(tap)
-        likeImg.userInteractionEnabled = true
+        likeImg.isUserInteractionEnabled = true
         
     }
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
         profileImage.clipsToBounds = true
         
@@ -53,17 +53,20 @@ class PostCell: UITableViewCell {
         self.likesLbl.text = "\(post.likes)"
         
         likeRef = DataService.ds.REF_USER_CURRENT.child("likes").child(post.postKey)
+        
         profileRef = DataService.ds.REF_USER_CURRENT.child("username")
         profileImageRef = DataService.ds.REF_USER_CURRENT.child("profileImage")
         
         //getting the profile name
-        profileRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+        
+        
+        profileRef.observeSingleEvent(of: .value, with: { snapshot in
         
             self.profileName.text = snapshot.value as? String
         })
         
         //downloading the profile image for the post
-        profileImageRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+        profileImageRef.observeSingleEvent(of: .value, with: { snapshot in
         
             if snapshot.value is NSNull {
                 self.profileImage.image = UIImage(named: "profileImage")
@@ -73,15 +76,15 @@ class PostCell: UITableViewCell {
                     self.profileimageUrl = profImg
                 }
                 
-                self.request = Alamofire.request(.GET, self.profileimageUrl).response(completionHandler: { request, response, data, err in
+                self.request = Alamofire.request(self.profileimageUrl).response { response in
                 
-                    if err == nil {
-                        let img = UIImage(data: data!)!
+                    if response.error == nil {
+                        let img = UIImage(data: response.data!)
                         self.profileImage.image = img
                         //feedViewController.imageCache.setObject(img, forKey: (self.post.profileImage)!)
                     }
                 
-                })
+                }
             }
         })
         
@@ -94,25 +97,25 @@ class PostCell: UITableViewCell {
             // else get it from the internet
             } else {
                 
-                request = Alamofire.request(.GET, post.imageUrl!).validate(contentType: ["image/*"]).response(completionHandler: { request, response, data, err in
+                request = Alamofire.request(post.imageUrl!).validate(contentType: ["image/*"]).response { response in
                     
-                    if err == nil {
-                        let img =  UIImage(data: data!)!
+                    if response.error == nil {
+                        let img =  UIImage(data: response.data!)
                         self.showcaseImage.image = img
                         //add the downloaded image to the cache
-                        feedViewController.imageCache.setObject(img, forKey: self.post.imageUrl!)
+                        feedViewController.imageCache.setObject(img!, forKey: self.post.imageUrl! as NSString)
                     }
                     
-                })
+                }
             }
             
             
         } else {
-            self.showcaseImage.hidden = true
+            self.showcaseImage.isHidden = true
         }
         
         
-        likeRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+        likeRef.observeSingleEvent(of: .value, with: { snapshot in
             
             //NSNull is Firabare's version of nil or null
             if snapshot.value is NSNull {
@@ -125,7 +128,7 @@ class PostCell: UITableViewCell {
     }
 
     func likeTapped(sender: UITapGestureRecognizer) {
-        likeRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+        likeRef.observeSingleEvent(of: .value, with: { snapshot in
             
             //NSNull is Firabare's version of nil or null
             if snapshot.value is NSNull {

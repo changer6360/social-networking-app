@@ -73,7 +73,7 @@ class Post {
         self._postRef = DataService.ds.REF_POSTS.child(self._postKey)
     }
     
-    func adjustLikes(addLike: Bool) {
+    func adjustLikes(_ addLike: Bool) {
         if addLike {
             _likes = _likes + 1
         } else {
